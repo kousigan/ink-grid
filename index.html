@@ -1,39 +1,65 @@
-<head><link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-</head
-<body>
+<head>
+	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head <body>
 <div id="app">
 
- <aside>
-    <div class="logoContainer">
-      <img src="https://cdn.jsdelivr.net/gh/kousigan/ink-grid@master/images/inkgridLogo.png">
-           
-    </div>
-    <div class="gridGenerate">
-      <details>
-        <summary>Header <i class="lni lni-close"></i></summary>
-        <div class="panelContent" >
-          <p>Enable</p>
-        </div>
-      </details>
-      <details>
-        <summary>Body <i class="lni lni-close"></i></summary>
-         <div class="panelContent" >
-          <p>Enable</p>
-        </div>
-      </details>
-      <details>
-        <summary>Footer <i class="lni lni-close"></i></summary>
-         <div class="panelContent" >
-          <p>Enable</p>
-        </div>
-      </details>
-    </div>
-    </aside>
-   
-  <main>
-    <div class="windowFrame">
-    </div>
-  </main>
-</div>
+	<aside>
+		<div class="logoContainer">
+			<img src="https://cdn.jsdelivr.net/gh/kousigan/ink-grid@master/images/inkgridLogo.png">
 
+    </div>
+			<div class="gridGenerate">
+				<details>
+					<summary>Header <i class="lni lni-close"></i></summary>
+					<div class="panelContent">
+						<p><input type="checkbox" class="enableHeader"><span><i class="lni lni-checkmark-circle"></i>Enable</span>
+						</p>
+						<p class="headerFeature"><input type="checkbox" disabled><span><i class="lni lni-checkmark-circle"></i>Sticky</span></p>
+						<p class="headerFeature"><input type="checkbox" disabled><span><i class="lni lni-checkmark-circle"></i>Fluid | Fixed width </span><input type="text" class="fixedWidth" value="1280" disabled></p>
+					</div>
+				</details>
+				<details>
+					<summary>Body <i class="lni lni-close"></i></summary>
+					<div class="panelContent">
+						<p>Enable</p>
+					</div> 
+				</details>
+				<details>
+					<summary>Footer <i class="lni lni-close"></i></summary>
+					<div class="panelContent">
+						<p>Enable</p>
+					</div>
+				</details>
+			</div>
+	</aside>
+
+	<main>
+		<div class="windowFrame">
+      <div id="gridContainer">
+
+      </div>
+		</div>
+	</main>
+</div>
+<script>
+var addHeader = function(arg) {
+  console.log(arg)
+  if(arg==true){
+    header_ = document.createElement('div');
+    $(header_).addClass('header')
+    .html('Header')
+    .appendTo('#gridContainer');
+    $('.headerFeature').find('input').removeAttr('disabled');
+  }
+  if(arg==false){
+    $('#gridContainer').find('.header').remove();
+    $('.headerFeature').find('input').attr('disabled','disabled'); 
+  }
+};
+
+$('.enableHeader').on('click',function(){
+    addHeader($(this).is(':checked'));
+})
+</script>
 </body>

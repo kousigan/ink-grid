@@ -68,12 +68,45 @@ box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px 0px;
 }
 .windowFrame:before{
   border-radius: 8px 8px 0px 0px;
-background-color: rgb(232, 232, 232);
+background-color: rgb(206, 206, 206);
 content:"";
-height: 30px;
+height: 32px;
 width:100%;
 display:block;
 }
 #app{
 margin-left: 300px;
+}
+
+.panelContent input[type="checkbox"]{
+  position: absolute;
+  z-index: 1;
+  opacity:0;
+  width: 30px;
+height: 100%;
+cursor:pointer;
+}
+ 
+.panelContent input[type="checkbox"]+span .lni{
+  opacity:0.2;
+}
+.panelContent input[type="checkbox"]:checked+span .lni{
+  opacity:1;
+}
+.panelContent p span .lni{
+  padding:10px;
+}
+.panelContent p{
+  position: relative;
+  margin:0;
+  
+}
+.panelContent p .fixedWidth{
+  width:60px;
+  height:24px;
+  text-align:center;
+  margin-left:10px;
+  border:1px solid #707070;
+  color: #333;
+  border-radius:3px;
 }
