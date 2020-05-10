@@ -37,7 +37,7 @@ margin-top: -38px;
   top: 38px;
 padding: 10px;
 }
-.tools button{
+.tools button,.addSection{
   border:0;
   background: linear-gradient(65deg,rgb(82, 172, 246) 0,rgb(130, 181, 249) 100%);
   box-shadow: 0 8px 24px rgba(94,82,246,.25) !important;
