@@ -1,0 +1,46 @@
+.simple-tab input[type="radio"]{
+     display: none;
+}
+.simple-tab  input[type="radio"]+label{
+     padding: 10px 20px;
+ 
+     transition:padding 0.3s ease-in;
+ float: left;
+margin-top: -38px;
+     cursor: pointer;
+}
+.simple-tab  input[type="radio"]:checked+label{
+     background:#026795;
+  color:#fff;
+}
+.simple-tab  div.tab{
+     display: none;
+     padding:10px;
+
+     
+}
+.simple-tab  input[type="radio"]+label:first-of-type{
+  margin-left: 20px; 
+}
+.simple-tab  input[type="radio"]:checked:nth-of-type(1) ~ div.tab:nth-of-type(1){
+     display: block;
+}
+.simple-tab  input[type="radio"]:checked:nth-of-type(2) ~ div.tab:nth-of-type(2){
+     display: block;
+}
+.simple-tab  input[type="radio"]:checked:nth-of-type(3) ~ div.tab:nth-of-type(3){
+     display: block;
+}
+.tools{
+  position:absolute;
+  right: 0;
+  top: 38px;
+padding: 10px;
+}
+.tools button{
+  border:0;
+  background: linear-gradient(65deg,rgb(82, 172, 246) 0,rgb(130, 181, 249) 100%);
+  box-shadow: 0 8px 24px rgba(94,82,246,.25) !important;
+  color:#fff;
+  padding: 5px 10px;
+}

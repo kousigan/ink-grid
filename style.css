@@ -70,7 +70,7 @@ box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px 0px;
   border-radius: 8px 8px 0px 0px;
 background-color: rgb(206, 206, 206);
 content:"";
-height: 32px;
+height: 38px;
 width:100%;
 display:block;
 }
@@ -109,4 +109,25 @@ cursor:pointer;
   border:1px solid #707070;
   color: #333;
   border-radius:3px;
+}
+.windowFrame{
+  position: relative;
+}
+.sectionAdded{
+  display: block;
+}
+.inputLabel{
+  padding:10px;
+  font-size: 14px;
+}
+.getClassname{
+  width: 150px;
+  margin:0 10px;
+  border: 1px solid #707070;
+color: #333;
+border-radius: 3px;
+height:24px
+}
+.panelContent p span button .lni{
+  padding:5px 0px;
 }
