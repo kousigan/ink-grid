@@ -140,9 +140,4 @@ text-indent: 5px;
 button{
   cursor:pointer;
 }
-.ui-state-default button{
-  display: none;
-}
-.ui-state-default:hover button{
-  display: inline;
-}
+ 
