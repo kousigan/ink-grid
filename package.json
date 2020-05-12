@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "rainbow-code": "^2.1.4"
+    "jquery-ui": "^1.12.1"
   }
 }

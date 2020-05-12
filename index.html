@@ -1,15 +1,15 @@
 <head>
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-	<script>
-		$( function() {
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script>
+  $( function() {
     $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
+   $( "#sortable" ).disableSelection();
   } );
-	</script>
-</head>
+  </script>
+ 
+</head> 
 
 <body>
 	<div id="app">
@@ -41,7 +41,7 @@
 									<input type="text" class="getClassname" value="" placeholder="clasname">
 									<button class="addSection"><i class="lni lni-plus"></i> </button>
 								</p>
-								<p id="sortable">
+								<p id=" ">
 									<span class="sectionAdded ui-state-default"> <i class="lni lni-menu"></i> <span id="main">Main </span><button class="editSection"><i class="lni lni-pencil"></i> </button><button class="delSection"><i class="lni lni-trash"></i> </button></span>
 									<span class="sectionAdded ui-state-default"> <i class="lni lni-menu"></i> <span id="section1">section1 </span> <button class="editSection"><i class="lni lni-pencil"></i> </button><button class="delSection"><i class="lni lni-trash"></i> </button></span>
 									<span class="sectionAdded ui-state-default"> <i class="lni lni-menu"></i> <span id="section2">section2 </span> <button class="editSection"><i class="lni lni-pencil"></i> </button><button class="delSection"><i class="lni lni-trash"></i> </button></span>
@@ -51,7 +51,8 @@
 					<details>
 						<summary>Footer <i class="lni lni-close"></i></summary>
 						<div class="panelContent">
-							<p><input type="checkbox" class="enableFooter"><span><i class="lni lni-checkmark-circle"></i>Fluid | Fixed width </span><input type="text" class="fixedWidth" value="1280" disabled></p>
+						<p><input type="checkbox" class="enableFooter"><span><i class="lni lni-checkmark-circle"></i>Enable</span>
+							</p>
 						</div>
 					</details>
 				</div>
@@ -68,36 +69,48 @@
 					<label for="tab3">CSS</label>
 					<div class="tab" id="gridContainer">
 
+   <div id="sortable main">
+  <div class="ui-state-default"><section> Section 1</section></div>
+  <div class="ui-state-default"><section> Section 2</section></div>
+  </div>
+ 
 					</div>
 					<div class="tab">
 						<pre><code data-language="javascript">var testing = true;</code></pre>
 						<div class="tools"><button class="copyCode">copy code</button></div>
 					</div>
-					<div class="tab"> </div>
+					<div class="tab">
+
+ 
+             </div>
 				</div>
 			</div>
 		</main>
 	</div>
 	<script>
-		var addHeader = function(arg) {
+		var addBar = function(arg,ele) {
   if(arg==true){
-    header_ = document.createElement('div');
-    $(header_).addClass('header')
-    .html('Header')
-    .appendTo('#gridContainer');
+    element_ = document.createElement(ele);
+    $(element_).addClass(ele)
+    .html(ele);
+    if(ele=='header'){
+      $(element_).prependTo('#gridContainer');
+    } else{
+      $(element_).appendTo('#gridContainer');
+    }
     $('.headerFeature').find('input').removeAttr('disabled');
   }
   if(arg==false){
-    $('#gridContainer').find('.header').remove();
+    $('#gridContainer').find(ele).remove();
     $('.headerFeature').find('input').attr('disabled','disabled'); 
   }
 };
 
 $('.enableHeader').on('click',function(){
-    addHeader($(this).is(':checked'));
+    addBar($(this).is(':checked'),'header');
 })
-$('.enableBody').on('click',function(){
-    addHeader($(this).is(':checked'));
+ $('.enableFooter').on('click',function(){
+    addBar($(this).is(':checked'),'footer');
 })
 	</script>
 </body>

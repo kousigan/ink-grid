@@ -1,3 +1,5 @@
+@import url('"https://cdn.lineicons.com/2.0/LineIcons.css');
+
 html,body{
   padding:0;
   margin:0;
@@ -140,4 +142,5 @@ text-indent: 5px;
 button{
   cursor:pointer;
 }
- 
+ #myList li { background-color:#ddf; padding-left:50px }
+ #myList li, #sortableListsBase li { background-color:#ddf; padding-left:50px }

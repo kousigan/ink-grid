@@ -1,0 +1,12 @@
+.header ,.footer{
+  height: 50px;
+  background: #d2d2d2;
+  align-content: center;
+  display: grid;
+  padding: 10px;
+}
+#gridContainer {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+}
